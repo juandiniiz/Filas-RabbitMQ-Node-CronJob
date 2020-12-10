@@ -40,7 +40,7 @@ senha: guest
 
 ```
 npm install -g json-server  
-npm install express body-parser mongoose amqplib request node-cron fs
+npm install express body-parser mongoose amqplib request node-cron fs request
 ```
 
 ## Para colocar mensagens na fila, abra um terminal, navegue até a pasta ApiFila, inicie o serviço com o comando:
