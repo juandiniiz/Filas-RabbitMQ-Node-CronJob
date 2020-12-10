@@ -23,21 +23,22 @@ sudo docker run --name mongoclient -p 3000:3000 --link mongodb:mongodb -d mongoc
 ```
 ## Agora para verificar se o mongoclient está rodando corretamente, acesse o seguinte endereço no seu navegador: http://localhost:3000/, em seguida crie uma conexao com os dados de admin seguindo as imagens abaixo
 
+1. clique em conect
+
 ![](/images/connectmongo0.png)
 
-## clique em conect
+2 clique em create new e preencha a aba Coonection com as informações abaixo: 
 
 ![](/images/connectmongo1.png)
 
-## clique em create new
+3. em seguida, preencha a aba authentication com as informações abaixo 
+
+usuario:  admin
+senha: admin  
 
 ![](/images/connectmongo2.png)
 
-## preencha com as informações abaixo
-```
-usuario:  admin
-senha: admin    
-```
+
 
 ![](/images/connectmongo3.png)
 
