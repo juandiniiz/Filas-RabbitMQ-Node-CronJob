@@ -34,6 +34,10 @@ sudo docker run --name mongoclient -p 3000:3000 --link mongodb:mongodb -d mongoc
 ![](/images/connectmongo2.png)
 
 ## preencha com as informações abaixo
+```
+usuario:  admin
+senha: admin    
+```
 
 ![](/images/connectmongo3.png)
 
