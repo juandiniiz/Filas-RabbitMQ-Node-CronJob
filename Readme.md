@@ -105,7 +105,7 @@ url:http://localhost:4000/fila/insereFilaEntrada
 
 ### Para validar que a mensagem foi inserida na fila, verifique o RabbitMQ na aba Queue, aparecerá a fila de entrada com uma mensagem pronta(Ready) para ser consumida conforme exemplo da imagem abaixo:
 
-![](/images/fila_entrada.jpg)
+![](/images/fila_entrada.png)
 
 ## 2. Consumir a fila e inserir os dados no mongodb
 
