@@ -1,6 +1,6 @@
 # Desenho do Projeto
 
-![](/images/diagrama2.png)
+![](/images/diagrama2.jpg)
 
 # Instalar o Docker e o Node na sua máquina
 
@@ -53,6 +53,8 @@ sudo docker run -d --hostname my-rabbit  --name rabbit13 -p 8081:15672 -p 5672:5
 user:  guest
 senha: guest    
 ```
+
+
 ## na raiz da pasta nodeapi , instale as dependencias do projeto com o comando:
 
 ```
