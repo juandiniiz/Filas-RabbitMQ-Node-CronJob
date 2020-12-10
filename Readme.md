@@ -120,12 +120,12 @@ node index.js
 ```
 node index.js
 ```
-## Caso queira reduzir o tempo do job para a cada 1 minuto, pare o serviço, abra o arquivo index.js dentro da pasta Cronjob, COMENTE a linha 13 com //, descomente a linha 10
-## e execute o serviço novamente
+## Caso queira reduzir o tempo do job para a cada 1 minuto, pare o serviço, abra o arquivo index.js dentro da pasta Cronjob, COMENTE a linha 13 e 50 com //, descomente a linha 10 e 51 tirando o // e execute o serviço novamente
 
 ## Para validar a inserção da fila de saida, abra um novo terminal, navegue até a raiz do projeto e execute o arquivo worker_saida com o comando 
 ```
 node worker_saida.js
 ```
+
 
 
