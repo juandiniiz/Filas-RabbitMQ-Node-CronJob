@@ -81,7 +81,22 @@ url:http://localhost:4000/fila/insereFilaEntrada
 
 ![](/images/postman.png)
 
-### Exemplo de objetos para inserir no BODY na opção raw ( não esqueça de mudar o tipo de texto do RAW para JSON)
+### Exemplos de objeto para inserir no BODY na opção raw ( não esqueça de mudar o tipo de texto do RAW para JSON )
+
+- objeto unico
+
+```
+[{
+  "freight_order_id": "97019e36-6c5d-4815-bad0-840d53897c34",
+  "freight_content_statement_key": "43160400850257000130550010000083991000083990",
+  "shipping_integration_id": "f7c95de4-89e0-444a-9455-d01b50dd3e7e",
+  "shipping_integration_type": "SSW",
+	"delivery": false
+}]
+```
+
+- multiplos objetos em uma unica mensagem
+
 ```
 [{
   "freight_order_id": "97019e36-6c5d-4815-bad0-840d53897c34",
