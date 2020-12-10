@@ -55,6 +55,9 @@ sudo docker run -d --hostname my-rabbit  --name rabbit13 -p 8080:15672 -p 5672:5
 user:  guest
 senha: guest    
 ```
+`
+![](/images/loginRabbitmq.png)
+
 ![](/images/Rabbitmq.png)
 
 # EXECUTANDO O PROJETO:
