@@ -1,13 +1,23 @@
+# Desenho do Projeto
+
+![](/images/diagrama2.png)
+
 # Instalar o Docker e o Node na sua máquina
 
 1. https://docs.docker.com/get-docker/
 2. https://nodejs.org/pt-br/download/
 
 ## Criar a imagem do mongodb com o comando abaixo
+
 ```
 sudo docker run --name mongodb -p 27017:27017 -e MONGO_INITDB_ROOT_USERNAME=admin -e MONGO_INITDB_ROOT_PASSWORD=admin -d mongo:4
 ```
+## Para conferir se a imagem está rodandod e maneira correta acesse http://localhost:27017/ e você verá a imagem abaixo:
+
+![](/images/testemongodb.png)
+
 ## Caso queira uma ferramenta de visualização, criar a imagem do mongoclient o comando abaixo
+
 ```
 sudo docker run \
     --name mongoclient \
@@ -18,15 +28,22 @@ sudo docker run \
 ```
 ## Agora para verificar se o mongoclient está rodando corretamente, acesse o seguinte endereço no seu navegador: http://localhost:3000/, em seguida crie uma conexao com os dados de admin seguindo as imagens abaixo
 
+![](/images/connectmongo0.png)
+
 ## clique em conect
+
+![](/images/connectmongo1.png)
 
 ## clique em create new
 
+![](/images/connectmongo2.png)
+
 ## preencha com as informações abaixo
 
-<imagem>
+![](/images/connectmongo3.png)
 
 ## Crie a imagem do RabbitMq com o comando abaixo:
+
 ```
 sudo docker run -d --hostname my-rabbit  --name rabbit13 -p 8081:15672 -p 5672:5672 -p 25676:25676 rabbitmq:3-management
 ```
