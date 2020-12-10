@@ -47,10 +47,10 @@ senha: admin
 ## - Crie a imagem do RabbitMq com o comando abaixo:
 
 ```
-sudo docker run -d --hostname my-rabbit  --name rabbit13 -p 8081:15672 -p 5672:5672 -p 25676:25676 rabbitmq:3-management
+sudo docker run -d --hostname my-rabbit  --name rabbit13 -p 8080:15672 -p 5672:5672 -p 25676:25676 rabbitmq:3-management
 ```
 
-## - Para verificar se o RabbitMQ está rodando corretamente, acesse o seguinte endereço no seu navegador: http://localhost:8081/ , em seguida logue com os dados de acesso:
+## - Para verificar se o RabbitMQ está rodando corretamente, acesse o seguinte endereço no seu navegador: http://localhost:8080/ , em seguida logue com os dados de acesso:
 ```
 user:  guest
 senha: guest    
