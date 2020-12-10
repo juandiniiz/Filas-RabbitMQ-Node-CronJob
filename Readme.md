@@ -48,7 +48,7 @@ sudo docker run -d --hostname my-rabbit  --name rabbit13 -p 8081:15672 -p 5672:5
 user:  guest
 senha: guest    
 ```
-![](/images/rabbitmq.jpg)
+![](/images/rabbitmq.png)
 
 ## na raiz da pasta nodeapi , instale as dependencias do projeto com o comando:
 
@@ -91,9 +91,9 @@ node index.js
 }]
 ```
 
-## Para validar que a mensagem foi inserida na fila, verifique o RabbitMQ na aba Queue, aparecerá a fila de entrada com uma mensagem pronta para ser consumida conforme imagem abaixo
+## Para validar que a mensagem foi inserida na fila, verifique o RabbitMQ na aba Queue, aparecerá a fila de entrada com uma mensagem pronta(Ready) para ser consumida conforme exemplo da imagem abaixo:
 
-<imagem>
+![](/images/rabbitmqfilas.png)
 
 ## Para consumir a fila e inserir os dados no mongodb, abra um novo terminal, navegue até a raiz do projeto na pasta nodeapi e inicie o servico worker com o comando ;
 ```
