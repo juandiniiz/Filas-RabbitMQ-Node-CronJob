@@ -2,7 +2,7 @@
 
 ![](/images/diagrama2.jpg)
 
-# Instalar o Docker e o Node na sua máquina
+# Instalar o Docker e o Node através dos links abaixo
 
 1. https://docs.docker.com/get-docker/
 2. https://nodejs.org/pt-br/download/
@@ -19,12 +19,7 @@ sudo docker run --name mongodb -p 27017:27017 -e MONGO_INITDB_ROOT_USERNAME=admi
 ## Caso queira uma ferramenta de visualização, criar a imagem do mongoclient o comando abaixo
 
 ```
-sudo docker run \
-    --name mongoclient \
-    -p 3000:3000 \
-    --link mongodb:mongodb \
-    -d \
-    mongoclient/mongoclient
+sudo docker run --name mongoclient -p 3000:3000 --link mongodb:mongodb -d mongoclient/mongoclient
 ```
 ## Agora para verificar se o mongoclient está rodando corretamente, acesse o seguinte endereço no seu navegador: http://localhost:3000/, em seguida crie uma conexao com os dados de admin seguindo as imagens abaixo
 
@@ -53,7 +48,7 @@ sudo docker run -d --hostname my-rabbit  --name rabbit13 -p 8081:15672 -p 5672:5
 user:  guest
 senha: guest    
 ```
-
+![](/images/rabbitmq.jpg)
 
 ## na raiz da pasta nodeapi , instale as dependencias do projeto com o comando:
 
@@ -100,7 +95,7 @@ node index.js
 
 <imagem>
 
-## Para consumir a fila e inserir os dados no mongodb, abra um novo terminal, navegue até a raiz do projento na pasta nodeapi e inicie o servico worker com o comando ;
+## Para consumir a fila e inserir os dados no mongodb, abra um novo terminal, navegue até a raiz do projeto na pasta nodeapi e inicie o servico worker com o comando ;
 ```
 node worker.js
 ```
