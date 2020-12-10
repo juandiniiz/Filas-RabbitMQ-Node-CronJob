@@ -2,43 +2,45 @@
 
 ![](/images/diagrama3.jpg)
 
-# Instalar o Docker e o Node através dos links abaixo
+# Instalar o Docker e o Node através dos links abaixo:
 
 1. https://docs.docker.com/get-docker/
 2. https://nodejs.org/pt-br/download/
 
-## Criar a imagem do mongodb com o comando abaixo
+## Criar a imagem do mongodb com o comando abaixo:
 
 ```
 sudo docker run --name mongodb -p 27017:27017 -e MONGO_INITDB_ROOT_USERNAME=admin -e MONGO_INITDB_ROOT_PASSWORD=admin -d mongo:4
 ```
-## Para conferir se a imagem está rodandod e maneira correta acesse http://localhost:27017/ e você verá a imagem abaixo:
+
+## Para conferir se a imagem está rodando e maneira correta acesse http://localhost:27017/ e você verá a imagem abaixo:
 
 ![](/images/testemongodb.png)
 
-## Caso queira uma ferramenta de visualização, criar a imagem do mongoclient o comando abaixo
+## Para visualizar os dados do mongodb com mais facilidade, criar a imagem do mongoclient o comando abaixo:
 
 ```
 sudo docker run --name mongoclient -p 3000:3000 --link mongodb:mongodb -d mongoclient/mongoclient
 ```
-## Agora para verificar se o mongoclient está rodando corretamente, acesse o seguinte endereço no seu navegador: http://localhost:3000/, em seguida crie uma conexao com os dados de admin seguindo as imagens abaixo
 
-1. clique em conect
+## Para verificar se o mongoclient está rodando corretamente, acesse o seguinte endereço no seu navegador: http://localhost:3000/, em seguida crie uma conexao com os dados de admin seguindo as instruções abaixo:
+
+### 1. Clique em conect
 
 ![](/images/connectmongo0.png)
 
-2 clique em create new e preencha a aba Coonection com as informações abaixo: 
+### 2. Clique em create new
 
 ![](/images/connectmongo1.png)
 
-3. em seguida, preencha a aba authentication com as informações abaixo 
-
-usuario:  admin
-senha: admin  
+### 3. Preencha a aba Connection com as informações abaixo: 
 
 ![](/images/connectmongo2.png)
 
+#### 4. Em seguida, preencha a aba authentication com as informações abaixo:
 
+usuario:  admin
+senha: admin  
 
 ![](/images/connectmongo3.png)
 
@@ -48,30 +50,33 @@ senha: admin
 sudo docker run -d --hostname my-rabbit  --name rabbit13 -p 8081:15672 -p 5672:5672 -p 25676:25676 rabbitmq:3-management
 ```
 
-## Agora para verificar se o RabbitMQ está rodando corretamente, acesse o seguinte endereço no seu navegador: http://localhost:8081/, em seguida logue com os dados de acesso:
+## Para verificar se o RabbitMQ está rodando corretamente, acesse o seguinte endereço no seu navegador: http://localhost:8081/ , em seguida logue com os dados de acesso:
 ```
 user:  guest
 senha: guest    
 ```
 ![](/images/rabbitmq.png)
 
-## na raiz da pasta nodeapi , instale as dependencias do projeto com o comando:
+## Antes de colocar o projeto para rodar, vá até a raiz da pasta nodeapi , instale as dependencias com o comando abaixo:
 
 ```
 npm install -g json-server  
 npm install express body-parser mongoose amqplib request node-cron fs request
 ```
+# 1. Inserindo mensagens na fila
 
-## Para colocar mensagens na fila, abra um terminal, navegue até a pasta ApiFila, inicie o serviço com o comando:
+### * Para colocar mensagens na fila, abra um terminal, navegue até a pasta ApiFila, inicie o serviço com o comando:
 ```
 node index.js
 ```
 
-## Com o serviço em execução, installe o POSTMAN e faça uma requisição(REQUEST) do tipo POST conforme a imagem abaixo
+### * Com o serviço em execução, installe o POSTMAN e faça uma requisição(REQUEST) do tipo POST conforme a imagem abaixo
 
-<imagem>
+url:http://localhost:4000/fila/insereFilaEntrada
 
-## Exemplo de objetos para inserir no BODY na opção raw ( não esqueça de mudar o tipo de texto do RAW para JSON)
+![](/images/rabbitmq.png)
+
+### * Exemplo de objetos para inserir no BODY na opção raw ( não esqueça de mudar o tipo de texto do RAW para JSON)
 ```
 [{
   "freight_order_id": "97019e36-6c5d-4815-bad0-840d53897c34",
