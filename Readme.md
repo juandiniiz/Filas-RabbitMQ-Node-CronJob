@@ -1,6 +1,6 @@
 # Desenho do Projeto
 
-![](/images/diagrama2.jpg)
+![](/images/diagrama3.jpg)
 
 # Instalar o Docker e o Node através dos links abaixo
 
