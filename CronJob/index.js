@@ -7,10 +7,10 @@ const apiFila = require("./service.fila");
 app = express();
 
 // CRON JOB EXECUTANDO DE UM EM UM MINUTO
-cron.schedule("* * * * *", () => {
+//cron.schedule("* * * * *", () => {
 
 // CRON JOB EXECUTANDO A CADA 2 HORAS
-//cron.schedule("0 */2 * * *", () => {   
+cron.schedule("0 */2 * * *", () => {   
   
 
     apiEncomenda.getAll(function(resultado) {
@@ -47,7 +47,8 @@ cron.schedule("* * * * *", () => {
                 
             });      
     });
-    console.log("Executando a tarefa a cada 2 minuto")
+    console.log("Executando a tarefa a cada 2 horas")
+  // console.log("Executando a tarefa a cada 2 minutos")
    
 });
     
