@@ -112,7 +112,11 @@ node worker.js
 ```
 json-server api-shipping-orders-tracking.json --port 3004
 ```
-## Abra outro terminar, navegue até a pasta Cronjob e inicialize o serviço com o comando:
+### 1. Abra outro terminal, navegue até a pasta ApiEncomenda( api para consultar e inserir dados no mongodb ) e inicialize o serviço com o comando:
+```
+node index.js
+```
+### 2. Abra outro terminal, navegue até a pasta Cronjob e inicialize o serviço com o comando:
 ```
 node index.js
 ```
