@@ -37,7 +37,7 @@ sudo docker run --name mongoclient -p 3000:3000 --link mongodb:mongodb -d mongoc
 
 ![](/images/connectmongo2.png)
 
-#### 4. Em seguida, preencha a aba authentication com as informações abaixo:
+### 4. Em seguida, preencha a aba authentication com as informações abaixo:
 
 usuario:  admin
 senha: admin  
@@ -55,28 +55,28 @@ sudo docker run -d --hostname my-rabbit  --name rabbit13 -p 8081:15672 -p 5672:5
 user:  guest
 senha: guest    
 ```
-![](/images/rabbitmq.png)
+![](/images/Rabbitmq.png)
 
-## Antes de colocar o projeto para rodar, vá até a raiz da pasta nodeapi , instale as dependencias com o comando abaixo:
+# Antes de colocar o projeto para rodar, vá até a raiz da pasta nodeapi , instale as dependencias com o comando abaixo:
 
 ```
 npm install -g json-server  
 npm install express body-parser mongoose amqplib request node-cron fs request
 ```
-# 1. Inserindo mensagens na fila
+## 1. Inserindo mensagens na fila
 
-### * Para colocar mensagens na fila, abra um terminal, navegue até a pasta ApiFila, inicie o serviço com o comando:
+### Para colocar mensagens na fila, abra um terminal, navegue até a pasta ApiFila e inicie o serviço com o comando:
 ```
 node index.js
 ```
 
-### * Com o serviço em execução, installe o POSTMAN e faça uma requisição(REQUEST) do tipo POST conforme a imagem abaixo
+### Com o serviço em execução, installe o POSTMAN e faça uma requisição(REQUEST) do tipo POST conforme a imagem abaixo
 
 url:http://localhost:4000/fila/insereFilaEntrada
 
-![](/images/rabbitmq.png)
+![](/images/postman.png)
 
-### * Exemplo de objetos para inserir no BODY na opção raw ( não esqueça de mudar o tipo de texto do RAW para JSON)
+### Exemplo de objetos para inserir no BODY na opção raw ( não esqueça de mudar o tipo de texto do RAW para JSON)
 ```
 [{
   "freight_order_id": "97019e36-6c5d-4815-bad0-840d53897c34",
@@ -101,17 +101,20 @@ url:http://localhost:4000/fila/insereFilaEntrada
 }]
 ```
 
-## Para validar que a mensagem foi inserida na fila, verifique o RabbitMQ na aba Queue, aparecerá a fila de entrada com uma mensagem pronta(Ready) para ser consumida conforme exemplo da imagem abaixo:
+### Para validar que a mensagem foi inserida na fila, verifique o RabbitMQ na aba Queue, aparecerá a fila de entrada com uma mensagem pronta(Ready) para ser consumida conforme exemplo da imagem abaixo:
 
 ![](/images/rabbitmqfilas.png)
 
-## Para consumir a fila e inserir os dados no mongodb, abra um novo terminal, navegue até a raiz do projeto na pasta nodeapi e inicie o servico worker com o comando ;
+## 2. Consumir a fila e inserir os dados no mongodb
+
+## Para consumir a fila e inserir os dados no mongodb, abra um novo terminal, navegue até a raiz do projeto na pasta nodeapi e inicie o servico worker com o comando:
+
 ```
 node worker.js
 ```
 ## Para validar que as informações foram inseridas, abra o console do mongoclient, vá até a aba collections, clique em encomendas e sem seguida execute a query
 
-<imagem>
+![](/images/collectionmongo.png)
 
 ## Para executar o Job a cada duas horas, abra outro terminal e navegue até a pasta raiz do projeto(nodeapi) e execute o comando abaixo para iniciar o jsonserver com a resposta da api do transportador:
 ```
